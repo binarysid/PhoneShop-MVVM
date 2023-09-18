@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "mockdatabuilder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/binarysid/MockDataBuilder",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0067a84dda60eae24b048ca55aaa7c0bd31e86b3"
+      }
+    },
+    {
+      "identity" : "networkimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/binarysid/NetworkImage",
+      "state" : {
+        "revision" : "d90dfaf405092263425fd45e39e4011a3c7dbc87",
+        "version" : "1.0.3"
+      }
+    },
+    {
+      "identity" : "urlrequestbuilder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/binarysid/URLRequestBuilder",
+      "state" : {
+        "revision" : "5317d2ff0482e3e03721c92d0a5a005ac8a0e945",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "webservice",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/binarysid/WebService",
+      "state" : {
+        "revision" : "d70bbd4fe3c3976d1b92cb9ee441623b325078b2",
+        "version" : "1.0.4"
+      }
+    }
+  ],
+  "version" : 2
+}
