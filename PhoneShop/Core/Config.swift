@@ -1,6 +1,6 @@
 //
 //  Config.swift
-//  GeoShapes
+//  PhoneShop
 //
 //  Created by Linkon Sid on 12/8/23.
 //

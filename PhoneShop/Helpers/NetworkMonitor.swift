@@ -1,8 +1,8 @@
 //
 //  NetworkManager.swift
-//  NetworkManagerSwiftUI
+//  PhoneShop
 //
-//  Created by Stephen Dowless on 8/27/21.
+//  Created by Linkon Sid on 11/9/23.
 //
 
 import Foundation

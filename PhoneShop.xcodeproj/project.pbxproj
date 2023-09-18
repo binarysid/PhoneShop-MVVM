@@ -93,6 +93,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		060427732AB8A5260004E9A7 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				060427742AB8A5300004E9A7 /* Products */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		060427742AB8A5300004E9A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				066301572AA2564C00CAFD55 /* Store */,
+				066301562AA2563200CAFD55 /* Views */,
+				06354A252AA274A7002FBC91 /* Models */,
+				060427752AB8A54F0004E9A7 /* DataService */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		060427752AB8A54F0004E9A7 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				C1F5C5702A9B5A5E0011652F /* AsyncService.swift */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
 		06241E712AAC5EA800D44A1D /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,7 +153,6 @@
 		06354A242AA27492002FBC91 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				C1F5C5702A9B5A5E0011652F /* AsyncService.swift */,
 				06241E6A2AAC579800D44A1D /* NetworkError.swift */,
 				06241E6F2AAC5E6600D44A1D /* EndPoints.swift */,
 				C14C26082AB04A5A00E2332E /* DataService.swift */,
@@ -145,6 +171,7 @@
 		06354A262AA274B5002FBC91 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				06354A242AA27492002FBC91 /* Service */,
 				067409912AB0B72700C063FE /* RatingView */,
 				06241E782AAC670900D44A1D /* ErrorView */,
 				06241E792AAC83E900D44A1D /* NetworkMonitor.swift */,
@@ -212,15 +239,12 @@
 		C1F5C55C2A9B59C00011652F /* PhoneShop */ = {
 			isa = PBXGroup;
 			children = (
-				06241E772AAC613000D44A1D /* Info.plist */,
-				06241E742AAC5F4700D44A1D /* Env */,
+				060427732AB8A5260004E9A7 /* Modules */,
 				06241E712AAC5EA800D44A1D /* Core */,
-				066301562AA2563200CAFD55 /* Views */,
 				06354A262AA274B5002FBC91 /* Helpers */,
-				06354A252AA274A7002FBC91 /* Models */,
-				06354A242AA27492002FBC91 /* Service */,
-				066301572AA2564C00CAFD55 /* Store */,
+				06241E742AAC5F4700D44A1D /* Env */,
 				C1F5C5612A9B59C10011652F /* Assets.xcassets */,
+				06241E772AAC613000D44A1D /* Info.plist */,
 				C1F5C5632A9B59C10011652F /* Preview Content */,
 			);
 			path = PhoneShop;
