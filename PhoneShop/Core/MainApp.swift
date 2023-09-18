@@ -1,6 +1,6 @@
 //
-//  ListAsyncImageCacheApp.swift
-//  ListAsyncImageCache
+//  MainApp.swift
+//  MainApp
 //
 //  Created by Linkon on 27/8/23.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct ListAsyncImageCacheApp: App {
+struct MainApp: App {
     @State private var errorWrapper: ErrorWrapper?
     @State private var showAlert = false
     @State private var showConncetionError = false
