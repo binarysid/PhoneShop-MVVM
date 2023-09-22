@@ -46,10 +46,6 @@ extension ProductRow {
 
 struct ProductRow_Previews: PreviewProvider {
     static var previews: some View {
-        if let product = PreViewLoader.Products.getSingleItem() {
-            ProductRow(product: product)
-        } else {
-            EmptyView()
-        }
+        ProductRow(product: PreViewLoader.products[0])
     }
 }

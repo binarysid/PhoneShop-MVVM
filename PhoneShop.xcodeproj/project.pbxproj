@@ -595,8 +595,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/binarysid/MockDataBuilder";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
 			};
 		};
 		C1F5C56B2A9B59F50011652F /* XCRemoteSwiftPackageReference "WebService" */ = {

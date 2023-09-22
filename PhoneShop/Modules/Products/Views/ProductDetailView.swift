@@ -56,10 +56,6 @@ extension ProductDetailView {
 
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        if let product = PreViewLoader.Products.getSingleItem() {
-            ProductDetailView(product: product)
-        } else {
-            EmptyView()
-        }
+        ProductDetailView(product: PreViewLoader.products[0])
     }
 }

@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/binarysid/MockDataBuilder",
       "state" : {
-        "branch" : "main",
-        "revision" : "0067a84dda60eae24b048ca55aaa7c0bd31e86b3"
+        "revision" : "103f9d3bbb920c212555a84cbf3794dfa9619e79",
+        "version" : "1.0.1"
       }
     },
     {

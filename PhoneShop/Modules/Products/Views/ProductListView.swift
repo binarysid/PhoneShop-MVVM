@@ -59,7 +59,7 @@ struct ListView_Previews_Container: View {
 
     var body: some View {
         ProductListView(selectedProduct: Binding.constant(nil))
-            .environmentObject(ProductStore(service: AsyncService(), data: PreViewLoader.Products.getList()))
+            .environmentObject(ProductStore(service: AsyncService(), data: PreViewLoader.products))
             .environment(\.showError) { error, title in
                 errorWrapper = ErrorWrapper(error: error, title: title)
                 showAlert = true
