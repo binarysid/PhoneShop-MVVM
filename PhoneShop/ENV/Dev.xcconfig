@@ -1,0 +1,11 @@
+//
+//  Dev.xcconfig
+//  ListAsyncImageCache
+//
+//  Created by Linkon Sid on 9/9/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_URL = raw.githubusercontent.com/binarysid/profile/main/api

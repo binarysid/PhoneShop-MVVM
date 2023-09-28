@@ -23,6 +23,8 @@
 		06644E482AA211D900479AF6 /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06644E472AA211D900479AF6 /* View+extension.swift */; };
 		06644E4C2AA225B400479AF6 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06644E4B2AA225B400479AF6 /* ProductRow.swift */; };
 		066C41892AB8A11200554B4E /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = 066C41882AB8A11200554B4E /* products.json */; };
+		066D3A062AC55E5900353C1F /* Dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 066D3A042AC55E5900353C1F /* Dev.xcconfig */; };
+		066D3A072AC55E5900353C1F /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 066D3A052AC55E5900353C1F /* Release.xcconfig */; };
 		067409932AB0B74000C063FE /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067409922AB0B74000C063FE /* RatingView.swift */; };
 		068F45EB2AB0C427007E19A0 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F45EA2AB0C427007E19A0 /* StarView.swift */; };
 		069C96AF2AAB80140078A0F3 /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C96AE2AAB80140078A0F3 /* ErrorWrapper.swift */; };
@@ -47,8 +49,6 @@
 		06241E6A2AAC579800D44A1D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		06241E6F2AAC5E6600D44A1D /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		06241E722AAC5EB400D44A1D /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		06241E752AAC5F6B00D44A1D /* Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
-		06241E762AAC5F8000D44A1D /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		06241E772AAC613000D44A1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		06241E792AAC83E900D44A1D /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		06241E7B2AAC84C600D44A1D /* NoInternetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetView.swift; sourceTree = "<group>"; };
@@ -59,6 +59,8 @@
 		06644E472AA211D900479AF6 /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
 		06644E4B2AA225B400479AF6 /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
 		066C41882AB8A11200554B4E /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
+		066D3A042AC55E5900353C1F /* Dev.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
+		066D3A052AC55E5900353C1F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		067409922AB0B74000C063FE /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		068F45EA2AB0C427007E19A0 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		069C96AE2AAB80140078A0F3 /* ErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
@@ -127,15 +129,6 @@
 				C1F5C55D2A9B59C00011652F /* MainApp.swift */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		06241E742AAC5F4700D44A1D /* Env */ = {
-			isa = PBXGroup;
-			children = (
-				06241E752AAC5F6B00D44A1D /* Dev.xcconfig */,
-				06241E762AAC5F8000D44A1D /* Release.xcconfig */,
-			);
-			path = Env;
 			sourceTree = "<group>";
 		};
 		06241E782AAC670900D44A1D /* ErrorView */ = {
@@ -211,6 +204,15 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		066D3A032AC55E4000353C1F /* ENV */ = {
+			isa = PBXGroup;
+			children = (
+				066D3A042AC55E5900353C1F /* Dev.xcconfig */,
+				066D3A052AC55E5900353C1F /* Release.xcconfig */,
+			);
+			path = ENV;
+			sourceTree = "<group>";
+		};
 		067409912AB0B72700C063FE /* RatingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,7 +244,7 @@
 				060427732AB8A5260004E9A7 /* Modules */,
 				06241E712AAC5EA800D44A1D /* Core */,
 				06354A262AA274B5002FBC91 /* Helpers */,
-				06241E742AAC5F4700D44A1D /* Env */,
+				066D3A032AC55E4000353C1F /* ENV */,
 				C1F5C5612A9B59C10011652F /* Assets.xcassets */,
 				06241E772AAC613000D44A1D /* Info.plist */,
 				C1F5C5632A9B59C10011652F /* Preview Content */,
@@ -332,7 +334,9 @@
 			files = (
 				066C41892AB8A11200554B4E /* products.json in Resources */,
 				C1F5C5652A9B59C10011652F /* Preview Assets.xcassets in Resources */,
+				066D3A062AC55E5900353C1F /* Dev.xcconfig in Resources */,
 				C1F5C5622A9B59C10011652F /* Assets.xcassets in Resources */,
+				066D3A072AC55E5900353C1F /* Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +381,6 @@
 /* Begin XCBuildConfiguration section */
 		C1F5C5662A9B59C10011652F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06241E752AAC5F6B00D44A1D /* Dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -438,7 +441,6 @@
 		};
 		C1F5C5672A9B59C10011652F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06241E762AAC5F8000D44A1D /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
