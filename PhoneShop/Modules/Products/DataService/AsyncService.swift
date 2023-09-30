@@ -6,36 +6,41 @@
 
 import Foundation
 import WebService
-import URLRequestBuilder
 
-struct AsyncService: DataService, WebService {
-    private var networkMonitor = NetworkMonitor()
+struct AsyncService: DataService {
+    private var httpClient = HTTPClient.shared
 
     func fetchList() async throws -> [Product] {
-        guard networkMonitor.isConnected else {
-            throw NetworkError.noInternet
-        }
 //        try randomError()
         guard let request = EndPoints.productList.request else {
             throw NetworkError.badURL
         }
 
         do {
-            let (data, response) = try await fetch(request)
+            let (data, response) = try await httpClient.fetch(request)
             guard let httpResponse = response as? HTTPURLResponse else {
                 throw NetworkError.invalidResponse
             }
             guard httpResponse.statusCode == 200 else {
                 throw NetworkError.serviceNotFound
             }
-            let result = try decode(type: [Product].self, from: data)
+            let result = try httpClient.decode(type: [Product].self, from: data)
             guard result.count > 0 else {
                 throw NetworkError.noDataFound
             }
             return result
-        } catch {
-            throw NetworkError.invalidJson
+        } catch HTTPServiceError.noInternet {
+            throw NetworkError.noInternet
         }
+        catch {
+            throw error
+        }
+    }
+}
+
+extension AsyncService {
+    func postFeedback(_ data: FeedbackData) async throws {
+       
     }
 }
 

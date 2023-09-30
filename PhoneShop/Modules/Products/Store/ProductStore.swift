@@ -50,3 +50,9 @@ extension ProductStore {
         }
     }
 }
+
+extension ProductStore {
+    func submitFeedback(_ data: FeedbackData) async throws {
+        try await service.postFeedback(data)
+    }
+}

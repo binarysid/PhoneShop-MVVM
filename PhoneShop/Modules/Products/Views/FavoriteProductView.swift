@@ -8,15 +8,33 @@
 import SwiftUI
 
 struct FavoriteProductView: View {
-    @AppStorage("favorites") var items: [Product] = []
+    @State private var isFavorite: Bool = false
+    @EnvironmentObject private var store: ProductStore
+    var product: Product
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            onAddFavorite()
+        }, label: {
+            Image(systemName: isFavorite ? "heart.fill" : "heart")
+            .font(.system(size: 35))
+            .foregroundColor(isFavorite ? .red : .gray)
+        })
+        .onAppear {
+                isFavorite = store.isFavorite(product)
+        }
+    }
+}
+
+extension FavoriteProductView {
+    private func onAddFavorite() {
+        store.onAdd(isFavorite, product: product)
+        isFavorite.toggle()
     }
 }
 
 struct FavoriteProductView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteProductView()
+        FavoriteProductView(product: PreViewLoader.products[0])
     }
 }

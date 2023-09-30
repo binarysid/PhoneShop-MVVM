@@ -16,4 +16,5 @@ struct Product: Codable, Identifiable, Hashable {
     let rating: Float
     let brand: String
     let category: String
+    let link: String
 }

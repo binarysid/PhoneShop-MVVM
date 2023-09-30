@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/binarysid/WebService",
       "state" : {
-        "revision" : "d70bbd4fe3c3976d1b92cb9ee441623b325078b2",
-        "version" : "1.0.4"
+        "revision" : "a548ac0dbe7c268a93ce4823c0c73b1d9100d7f1",
+        "version" : "1.0.7"
       }
     }
   ],

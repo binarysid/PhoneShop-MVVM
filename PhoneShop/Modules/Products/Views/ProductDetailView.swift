@@ -10,29 +10,34 @@ import SwiftUI
 struct ProductDetailView: View {
     var product: Product
     @EnvironmentObject private var store: ProductStore
-    @State private var isFavorite: Bool = false
+    @State var ratingPoint = 0
+    let totalRating = 5
 
     var body: some View {
-        VStack {
-            icon
-            title
-            favorite
-        }
-        .onAppear {
-            isFavorite = store.isFavorite(product)
-        }
+            VStack(spacing: 20) {
+                icon
+                rating
+                feedback
+            }
+            .toolbar {
+                favorite
+            }
+        .navigationTitle(product.title)
+        .padding()
     }
 }
 
 extension ProductDetailView {
+    private var feedback: some View {
+        FeedbackSubmitView(rating: $ratingPoint)
+    }
+
+    private var rating: some View {
+        RatingView(totalRating: totalRating, rating: $ratingPoint)
+    }
+    
     private var favorite: some View {
-        Button(action: {
-            onAddFavorite()
-        }, label: {
-            Image(systemName: isFavorite ? "heart.fill" : "heart")
-            .font(.system(size: 50))
-            .foregroundColor(isFavorite ? .red : .gray)
-        })
+        FavoriteProductView(product: product)
     }
 
     private var title: some View {
@@ -45,13 +50,6 @@ extension ProductDetailView {
         .thumbnail(width: 150, height: 150)
     }
 
-}
-
-extension ProductDetailView {
-    private func onAddFavorite() {
-        store.onAdd(isFavorite, product: product)
-        isFavorite.toggle()
-    }
 }
 
 struct ProductDetailView_Previews: PreviewProvider {

@@ -13,6 +13,11 @@ struct MainApp: App {
     @State private var showAlert = false
     @State private var showConncetionError = false
     
+    init() {
+        // Register the custom URLProtocol
+//        URLProtocol.registerClass(CustomURLProtocol.self)
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
