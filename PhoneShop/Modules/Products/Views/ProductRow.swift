@@ -13,6 +13,8 @@ struct ProductRow: View {
 
     var body: some View {
         HStack {
+            icon
+            Spacer()
             titleDesc
             Spacer()
             price
@@ -27,17 +29,23 @@ extension ProductRow {
     }
 
     private var titleDesc: some View {
-        Label(title: {
-            VStack(alignment: .listRowSeparatorLeading) {
-                Text(product.title)
-                Text(product.description)
-                    .font(.subheadline)
-            }
-        }, icon: {
-            icon
-        })
-        .font(.title2)
-        .labelStyle(.titleAndIcon)
+        VStack(alignment: .listRowSeparatorLeading) {
+            Text(product.title)
+            Text(product.description)
+                .font(.subheadline)
+                .lineLimit(2)
+        }
+//        Label(title: {
+//            VStack(alignment: .listRowSeparatorLeading) {
+//                Text(product.title)
+//                Text(product.description)
+//                    .font(.subheadline)
+//            }
+//        }, icon: {
+//            icon
+//        })
+//        .font(.title2)
+//        .labelStyle(.titleAndIcon)
     }
 
     private var icon: some View {
