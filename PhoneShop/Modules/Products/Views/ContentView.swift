@@ -14,7 +14,6 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 list
-                    .navigationTitle("ListTest")
             }
         }
     }
