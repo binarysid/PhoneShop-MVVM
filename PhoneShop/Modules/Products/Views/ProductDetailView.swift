@@ -18,6 +18,7 @@ struct ProductDetailView: View {
                 icon
                 rating
                 feedback
+                link
             }
             .toolbar {
                 favorite
@@ -49,7 +50,10 @@ extension ProductDetailView {
         AsyncIconView(url: URL(string: product.thumbnail), width: 150, height: 150)
         .thumbnail(width: 150, height: 150)
     }
-
+    
+    private var link: some View {
+        LinkButton(title: "Visit Phone Shop Online", url: "https://www.youtube.com", image: "phones")
+    }
 }
 
 struct ProductDetailView_Previews: PreviewProvider {

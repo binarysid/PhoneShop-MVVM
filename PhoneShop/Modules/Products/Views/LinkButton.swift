@@ -10,19 +10,16 @@ import SwiftUI
 struct LinkButton: View {
     let title: String
     let url: String
-
+    let image: String
+    
     var body: some View {
         Link(destination: .init(string: url)!) {
-            Text(title)
-                .bold()
-                .foregroundStyle(.white)
-                .padding()
-                .background(.blue)
-                .clipShape(Capsule())
+            Label(title, image: image)
+                .labelStyle(.defaultCapsule)
         }
     }
 }
 
 #Preview {
-    LinkButton(title: "Visit Link", url: PreViewLoader.products[0].link)
+    LinkButton(title: "Visit Link", url: "https://www.youtube.com", image: "phones")
 }

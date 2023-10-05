@@ -12,10 +12,12 @@ struct ProductRow: View {
     var product: Product
 
     var body: some View {
-        HStack(spacing: 8) {
+        HStack {
             titleDesc
+            Spacer()
             price
         }
+        .padding()
     }
 }
 
@@ -26,7 +28,7 @@ extension ProductRow {
 
     private var titleDesc: some View {
         Label(title: {
-            VStack(alignment: .leading) {
+            VStack(alignment: .listRowSeparatorLeading) {
                 Text(product.title)
                 Text(product.description)
                     .font(.subheadline)
@@ -44,8 +46,7 @@ extension ProductRow {
     }
 }
 
-struct ProductRow_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductRow(product: PreViewLoader.products[0])
-    }
+#Preview {
+    ProductRow(product: PreViewLoader.products[0])
 }
+
