@@ -13,9 +13,7 @@ struct ProductRow: View {
 
     var body: some View {
         HStack {
-            icon
-            Spacer()
-            titleDesc
+            titleLabel
             Spacer()
             price
         }
@@ -28,24 +26,17 @@ extension ProductRow {
         Text("$\(product.price.roundStringUptoDecimal(0))")
     }
 
-    private var titleDesc: some View {
-        VStack(alignment: .listRowSeparatorLeading) {
-            Text(product.title)
-            Text(product.description)
-                .font(.subheadline)
-                .lineLimit(2)
-        }
-//        Label(title: {
-//            VStack(alignment: .listRowSeparatorLeading) {
-//                Text(product.title)
-//                Text(product.description)
-//                    .font(.subheadline)
-//            }
-//        }, icon: {
-//            icon
-//        })
-//        .font(.title2)
-//        .labelStyle(.titleAndIcon)
+    private var titleLabel: some View {
+        Label(title: {
+            VStack(alignment: .listRowSeparatorLeading) {
+                Text(product.title)
+                Text(product.description)
+                    .font(.subheadline)
+            }
+        }, icon: {
+            icon
+        })
+        .labelStyle(.defaultRow)
     }
 
     private var icon: some View {
