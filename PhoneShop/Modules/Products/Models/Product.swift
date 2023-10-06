@@ -18,3 +18,4 @@ struct Product: Codable, Identifiable, Hashable {
     let category: String
     let link: String
 }
+

@@ -10,7 +10,7 @@ import WebService
 struct AsyncService: DataService {
     private var httpClient = HTTPClient.shared
 
-    func fetchList() async throws -> [Product] {
+    func fetchList() async throws -> [ProductViewData] {
 //        try randomError()
         guard let request = EndPoints.productList.request else {
             throw NetworkError.badURL
@@ -28,7 +28,8 @@ struct AsyncService: DataService {
             guard result.count > 0 else {
                 throw NetworkError.noDataFound
             }
-            return result
+
+            return result.toViewData()
         } catch HTTPServiceError.noInternet {
             throw NetworkError.noInternet
         }
@@ -51,3 +52,4 @@ extension AsyncService {
         }
     }
 }
+

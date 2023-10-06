@@ -8,6 +8,6 @@
 import Foundation
 
 protocol DataService {
-    func fetchList() async throws -> [Product]
+    func fetchList() async throws -> [ProductViewData]
     func postFeedback(_ data: FeedbackData) async throws
 }

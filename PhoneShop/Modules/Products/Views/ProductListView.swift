@@ -11,18 +11,11 @@ struct ProductListView: View {
     @EnvironmentObject private var store: ProductStore
     @Environment(\.showError) private var showError
     @Environment(\.conncetionError) private var connectionError
-    @Binding var selectedProduct: Product?
+    private let column: [GridItem] = Array(repeating: .init(.flexible()), count: 1)
     
     var body: some View {
         NavigationStack {
-            List(store.data, id: \.id) { product in
-                NavigationLink(value: product) {
-                    ProductRow(product: product)
-                }
-            }
-            .navigationDestination(for: Product.self) { product in
-                ProductDetailView(product: product)
-            }
+            list
             .overlay {
                 if store.showLoader {
                     ProgressView()
@@ -35,6 +28,49 @@ struct ProductListView: View {
                 await fetchData()
             }
         }
+    }
+}
+
+extension ProductListView {
+    private var list: some View {
+        ScrollView {
+            LazyVGrid(columns: column,
+                      alignment: .leading,
+                      spacing: 10,
+                      pinnedViews: .sectionHeaders
+            ) {
+                ForEach(store.data, id: \.self) { item in
+                    Section {
+                        ForEach(item.products, id: \.self) { product in
+                            productView(data: product)
+                        }
+                    } header: {
+                        categoryHeader(title: item.category)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func productView(data: Product) -> some View {
+        NavigationLink(destination: {
+            ProductDetailView(product: data)
+        }, label: {
+            ProductRow(product: data)
+                .background(.blue, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                .padding(10)
+        })
+        .buttonStyle(PlainButtonStyle())
+    }
+    
+    private func categoryHeader(title: String) -> some View {
+        Text(title)
+            .padding()
+//            .frame(minWidth: 70)
+//            .rotationEffect(Angle(degrees: -90))
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(RoundedRectangle(cornerRadius: 0)
+                .fill(Color.mint))
     }
 }
 
@@ -58,7 +94,7 @@ struct ListView_Previews_Container: View {
     @State private var showAlert = false
 
     var body: some View {
-        ProductListView(selectedProduct: Binding.constant(nil))
+        ProductListView()
             .environmentObject(ProductStore(service: AsyncService(), data: PreViewLoader.products))
             .environment(\.showError) { error, title in
                 errorWrapper = ErrorWrapper(error: error, title: title)

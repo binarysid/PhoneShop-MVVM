@@ -26,3 +26,19 @@ extension Array: RawRepresentable where Element: Codable {
         return result
     }
 }
+
+extension Array where Self == [Product] {
+    func toViewData() -> [ProductViewData] {
+        var categories: [String: ProductViewData] = [:]
+
+        self.forEach {
+            if let _ = categories[$0.category] {
+                categories[$0.category]?.addProduct(product: $0)
+            } else {
+                categories[$0.category] = ProductViewData(category: $0.category, product: $0)
+            }
+        }
+
+        return categories.map { $0.value }
+    }
+}

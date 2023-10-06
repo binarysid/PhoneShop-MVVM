@@ -21,7 +21,7 @@ struct ContentView: View {
 
 extension ContentView {
     private var list: some View {
-        ProductListView(selectedProduct: $selectedProduct)
+        ProductListView()
     }
 }
 

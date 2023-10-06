@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 final class ProductStore: ObservableObject {
-    @Published var data: [Product] = []
+    @Published var data: [ProductViewData] = []
     @Published var showLoader = false
     @AppStorage("favorites") var favorites: [Product] = []
     
