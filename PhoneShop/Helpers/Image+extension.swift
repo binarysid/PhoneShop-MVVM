@@ -13,6 +13,7 @@ extension Image {
             .frame(width: width, height: height)
             .cornerRadius(radius)
     }
+
     func circularThumbnail(width: CGFloat = 80, height: CGFloat = 80) -> some View {
         resizable()
             .frame(width: width, height: height)

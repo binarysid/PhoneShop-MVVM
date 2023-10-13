@@ -33,6 +33,7 @@
 		06A2C8552ACE8C170010DA5F /* CapsuleStyleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A2C8542ACE8C170010DA5F /* CapsuleStyleLabel.swift */; };
 		06A2C8572ACEEF120010DA5F /* RowLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A2C8562ACEEF120010DA5F /* RowLabelStyle.swift */; };
 		06A2C8592AD00D420010DA5F /* ProductViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A2C8582AD00D420010DA5F /* ProductViewData.swift */; };
+		06A2C85D2AD15AC50010DA5F /* ProductHGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A2C85C2AD15AC50010DA5F /* ProductHGrid.swift */; };
 		06A351FB2AAF5FDD006ADCFD /* Numeric+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A351FA2AAF5FDD006ADCFD /* Numeric+extension.swift */; };
 		06A351FD2AAF7710006ADCFD /* AsyncIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A351FC2AAF7710006ADCFD /* AsyncIconView.swift */; };
 		C14C26092AB04A5A00E2332E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C26082AB04A5A00E2332E /* DataService.swift */; };
@@ -75,6 +76,7 @@
 		06A2C8542ACE8C170010DA5F /* CapsuleStyleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleStyleLabel.swift; sourceTree = "<group>"; };
 		06A2C8562ACEEF120010DA5F /* RowLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLabelStyle.swift; sourceTree = "<group>"; };
 		06A2C8582AD00D420010DA5F /* ProductViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewData.swift; sourceTree = "<group>"; };
+		06A2C85C2AD15AC50010DA5F /* ProductHGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductHGrid.swift; sourceTree = "<group>"; };
 		06A351FA2AAF5FDD006ADCFD /* Numeric+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+extension.swift"; sourceTree = "<group>"; };
 		06A351FC2AAF7710006ADCFD /* AsyncIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncIconView.swift; sourceTree = "<group>"; };
 		C14C26082AB04A5A00E2332E /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				061CBE622AC59588003DE1EB /* FeedbackSubmitView.swift */,
 				06A2C8542ACE8C170010DA5F /* CapsuleStyleLabel.swift */,
 				06A2C8562ACEEF120010DA5F /* RowLabelStyle.swift */,
+				06A2C85C2AD15AC50010DA5F /* ProductHGrid.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				06644E482AA211D900479AF6 /* View+extension.swift in Sources */,
 				C1F5C55E2A9B59C00011652F /* MainApp.swift in Sources */,
 				C155CF802AAF3157002E3D69 /* Array+Extension.swift in Sources */,
+				06A2C85D2AD15AC50010DA5F /* ProductHGrid.swift in Sources */,
 				06241E7A2AAC83E900D44A1D /* NetworkMonitor.swift in Sources */,
 				C14C26092AB04A5A00E2332E /* DataService.swift in Sources */,
 				C1F5C5712A9B5A5E0011652F /* AsyncService.swift in Sources */,

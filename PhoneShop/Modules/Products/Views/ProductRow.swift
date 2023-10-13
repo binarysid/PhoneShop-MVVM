@@ -13,9 +13,13 @@ struct ProductRow: View {
 
     var body: some View {
         HStack {
-            titleLabel
-            Spacer()
-            price
+            icon
+        }
+        .overlay {
+            Text("hi")
+                .foregroundStyle(.white)
+                .font(.headline)
+                .frame(alignment: .bottom)
         }
         .padding()
     }
@@ -41,7 +45,8 @@ extension ProductRow {
 
     private var icon: some View {
         AsyncIconView(url: URL(string: product.thumbnail))
-        .thumbnail()
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+
     }
 }
 

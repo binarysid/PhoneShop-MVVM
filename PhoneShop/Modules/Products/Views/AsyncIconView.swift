@@ -35,3 +35,4 @@ struct AsyncIconView_Previews: PreviewProvider {
         AsyncIconView(url: URL(string: "https://i.dummyjson.com/data/products/1/thumbnail.jpg"))
     }
 }
+

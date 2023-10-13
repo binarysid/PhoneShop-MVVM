@@ -41,9 +41,7 @@ extension ProductListView {
             ) {
                 ForEach(store.data, id: \.self) { item in
                     Section {
-                        ForEach(item.products, id: \.self) { product in
-                            productView(data: product)
-                        }
+                        ProductHGrid(products: item.products)
                     } header: {
                         categoryHeader(title: item.category)
                     }
