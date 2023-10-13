@@ -16,7 +16,7 @@ struct MainApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(ProductStore(service: AsyncService()))
+                .environmentObject(ProductStoreModel(service: AsyncService()))
                 .environment(\.showError) { error, title in
                     errorWrapper = ErrorWrapper(error: error, title: title)
                     showAlert = true

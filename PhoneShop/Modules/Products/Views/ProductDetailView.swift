@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductDetailView: View {
     var product: Product
-    @EnvironmentObject private var store: ProductStore
+    @EnvironmentObject private var store: ProductStoreModel
     @State var ratingPoint = 0
     let totalRating = 5
 

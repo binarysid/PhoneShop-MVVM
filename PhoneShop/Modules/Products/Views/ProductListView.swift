@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductListView: View {
-    @EnvironmentObject private var store: ProductStore
+    @EnvironmentObject private var store: ProductStoreModel
     @Environment(\.showError) private var showError
     @Environment(\.conncetionError) private var connectionError
     private let column: [GridItem] = Array(repeating: .init(.flexible()), count: 1)
@@ -17,15 +17,21 @@ struct ProductListView: View {
         NavigationStack {
             list
             .overlay {
-                if store.showLoader {
+                if store.state == .loading {
                     ProgressView()
                 }
             }
             .task {
-                await fetchData()
+                if store.state == .inital {
+                    await fetchData()
+                }
             }
             .refreshable {
-                await fetchData()
+                if store.state != .loading {
+                    Task {
+                        await fetchData()
+                    }
+                }
             }
         }
     }
@@ -74,7 +80,7 @@ extension ProductListView {
 
 extension ProductListView {
     private func fetchData() async {
-        await store.progressLoader()
+        store.setLoadingState(.loading)
         do {
             try await store.fetch()
         } catch let error as NetworkError where error == .noInternet {
@@ -82,7 +88,7 @@ extension ProductListView {
         } catch {
             showError(error, "Error")
         }
-        await store.progressLoader()
+        store.setLoadingState(.completed)
     }
 }
 
@@ -93,7 +99,7 @@ struct ListView_Previews_Container: View {
 
     var body: some View {
         ProductListView()
-            .environmentObject(ProductStore(service: AsyncService(), data: PreViewLoader.products))
+            .environmentObject(ProductStoreModel(service: AsyncService(), data: PreViewLoader.products))
             .environment(\.showError) { error, title in
                 errorWrapper = ErrorWrapper(error: error, title: title)
                 showAlert = true

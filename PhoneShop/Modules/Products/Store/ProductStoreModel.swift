@@ -8,10 +8,15 @@
 import Foundation
 import SwiftUI
 
+enum DataLoadingState {
+    case inital, loading, completed, error
+}
+
+@MainActor
 final class ProductStoreModel: ObservableObject {
     @Published var data: [ProductViewData] = []
-    @Published var showLoader = false
     @AppStorage("favorites") var favorites: [Product] = []
+    @Published var state: DataLoadingState = .inital
     
     let service: DataService
 
@@ -25,15 +30,11 @@ final class ProductStoreModel: ObservableObject {
 
     func fetch() async throws {
         let products = try await service.fetchList()
-        await MainActor.run {
-            self.data = products
-        }
+        self.data = products
     }
     
-    func progressLoader() async {
-        await MainActor.run {
-            showLoader.toggle()
-        }
+    func setLoadingState(_ state: DataLoadingState) {
+        self.state = state
     }
 }
 

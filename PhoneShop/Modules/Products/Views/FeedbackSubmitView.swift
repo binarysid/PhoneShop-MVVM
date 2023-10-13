@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FeedbackSubmitView: View {
-    @EnvironmentObject private var store: ProductStore
+    @EnvironmentObject private var store: ProductStoreModel
     @Binding var rating: Int
 
     var body: some View {

@@ -46,7 +46,7 @@
 		C1F5C56D2A9B59F50011652F /* WebService in Frameworks */ = {isa = PBXBuildFile; productRef = C1F5C56C2A9B59F50011652F /* WebService */; };
 		C1F5C56F2A9B5A0D0011652F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F5C56E2A9B5A0D0011652F /* Product.swift */; };
 		C1F5C5712A9B5A5E0011652F /* AsyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F5C5702A9B5A5E0011652F /* AsyncService.swift */; };
-		C1F5C5752A9B5EAA0011652F /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F5C5742A9B5EAA0011652F /* ProductStore.swift */; };
+		C1F5C5752A9B5EAA0011652F /* ProductStoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F5C5742A9B5EAA0011652F /* ProductStoreModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,7 +89,7 @@
 		C1F5C5642A9B59C10011652F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C1F5C56E2A9B5A0D0011652F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		C1F5C5702A9B5A5E0011652F /* AsyncService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncService.swift; sourceTree = "<group>"; };
-		C1F5C5742A9B5EAA0011652F /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
+		C1F5C5742A9B5EAA0011652F /* ProductStoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStoreModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +209,7 @@
 		066301572AA2564C00CAFD55 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				C1F5C5742A9B5EAA0011652F /* ProductStore.swift */,
+				C1F5C5742A9B5EAA0011652F /* ProductStoreModel.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -400,7 +400,7 @@
 				069C96B12AAB83880078A0F3 /* ErrorView.swift in Sources */,
 				06241E732AAC5EB400D44A1D /* Config.swift in Sources */,
 				C155CF822AAF31A8002E3D69 /* FavoriteProductView.swift in Sources */,
-				C1F5C5752A9B5EAA0011652F /* ProductStore.swift in Sources */,
+				C1F5C5752A9B5EAA0011652F /* ProductStoreModel.swift in Sources */,
 				066D3A0A2AC5654C00353C1F /* LinkButton.swift in Sources */,
 				C1F5C56F2A9B5A0D0011652F /* Product.swift in Sources */,
 				06241E802AAC995D00D44A1D /* NoInternetEnvKey.swift in Sources */,

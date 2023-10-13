@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FavoriteProductView: View {
     @State private var isFavorite: Bool = false
-    @EnvironmentObject private var store: ProductStore
+    @EnvironmentObject private var store: ProductStoreModel
     var product: Product
     
     var body: some View {
