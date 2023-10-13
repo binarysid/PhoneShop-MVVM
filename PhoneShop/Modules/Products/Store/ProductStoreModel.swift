@@ -19,6 +19,11 @@ final class ProductStoreModel: ObservableObject {
     @Published var state: DataLoadingState = .inital
     
     let service: DataService
+    var productList: [Product] = [] {
+        didSet {
+            self.data = productList.toViewData()
+        }
+    }
 
     init(service: DataService, data: [Product]) {
         self.service = service
@@ -30,7 +35,9 @@ final class ProductStoreModel: ObservableObject {
 
     func fetch() async throws {
         let products = try await service.fetchList()
-        self.data = products.toViewData()
+        if products != self.productList {
+            self.productList = products
+        }
     }
     
     func setLoadingState(_ state: DataLoadingState) {
