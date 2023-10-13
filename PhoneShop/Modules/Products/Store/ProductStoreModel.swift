@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-final class ProductStore: ObservableObject {
+final class ProductStoreModel: ObservableObject {
     @Published var data: [ProductViewData] = []
     @Published var showLoader = false
     @AppStorage("favorites") var favorites: [Product] = []
@@ -37,7 +37,7 @@ final class ProductStore: ObservableObject {
     }
 }
 
-extension ProductStore {
+extension ProductStoreModel {
     func isFavorite(_ product: Product) -> Bool {
         favorites.contains(product)
     }
@@ -51,7 +51,7 @@ extension ProductStore {
     }
 }
 
-extension ProductStore {
+extension ProductStoreModel {
     func submitFeedback(_ data: FeedbackData) async throws {
         try await service.postFeedback(data)
     }
