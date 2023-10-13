@@ -30,7 +30,7 @@ final class ProductStoreModel: ObservableObject {
 
     func fetch() async throws {
         let products = try await service.fetchList()
-        self.data = products
+        self.data = products.toViewData()
     }
     
     func setLoadingState(_ state: DataLoadingState) {
