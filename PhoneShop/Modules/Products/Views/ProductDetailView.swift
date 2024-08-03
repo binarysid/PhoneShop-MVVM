@@ -47,8 +47,9 @@ extension ProductDetailView {
     }
 
     private var icon: some View {
-        AsyncIconView(url: URL(string: product.thumbnail), width: 150, height: 150)
-        .thumbnail(width: 150, height: 150)
+        let imageURL = product.thumbnail.flatMap { URL(string: $0) }
+        return AsyncIconView(url: imageURL, width: 150, height: 150)
+                .thumbnail(width: 150, height: 150)
     }
     
     private var link: some View {

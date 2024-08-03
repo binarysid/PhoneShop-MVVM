@@ -18,7 +18,7 @@ enum EndPoints {
     var request: URLRequest? {
         switch self {
         case .productList:
-            let url = EndPoints.baseURL + "/phone.json"
+            let url = EndPoints.baseURL + "/products.json"
             return EndPoints.requestBuilder.createRequestWith(baseURL: url)
         }
     }

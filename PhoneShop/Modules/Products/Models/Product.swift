@@ -10,12 +10,11 @@ import Foundation
 struct Product: Codable, Identifiable, Hashable {
     let id: Int
     let title: String
-    let description: String
-    let thumbnail: String
-    let price: Double
-    let rating: Float
-    let brand: String
+    let description: String?
+    let thumbnail: String?
+    let price: Double?
+    let rating: Float?
+    let brand: String?
     let category: String
-    let link: String
 }
 

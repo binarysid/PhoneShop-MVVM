@@ -25,12 +25,8 @@ final class ProductStoreModel: ObservableObject {
         }
     }
 
-    init(service: DataService, data: [Product]) {
+    init(service: DataService) {
         self.service = service
-    }
-    
-    convenience init(service: DataService) {
-        self.init(service: service, data: [])
     }
 
     func fetch() async throws {

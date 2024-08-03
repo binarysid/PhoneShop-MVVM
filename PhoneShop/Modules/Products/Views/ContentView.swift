@@ -32,7 +32,7 @@ struct ContentView_Previews_Container: View {
 
     var body: some View {
         ContentView()
-            .environmentObject(ProductStoreModel(service: AsyncService(), data: PreViewLoader.products))
+            .environmentObject(ProductStoreModel(service: MockDataService()))
             .environment(\.showError) { error, title in
                 errorWrapper = ErrorWrapper(error: error, title: title)
                 showAlert = true

@@ -56,17 +56,6 @@ extension ProductListView {
         }
     }
     
-    private func productView(data: Product) -> some View {
-        NavigationLink(destination: {
-            ProductDetailView(product: data)
-        }, label: {
-            ProductRow(product: data)
-                .background(.blue, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-                .padding(10)
-        })
-        .buttonStyle(PlainButtonStyle())
-    }
-    
     private func categoryHeader(title: String) -> some View {
         Text(title)
             .padding()
@@ -99,7 +88,7 @@ struct ListView_Previews_Container: View {
 
     var body: some View {
         ProductListView()
-            .environmentObject(ProductStoreModel(service: AsyncService(), data: PreViewLoader.products))
+            .environmentObject(ProductStoreModel(service: MockDataService()))
             .environment(\.showError) { error, title in
                 errorWrapper = ErrorWrapper(error: error, title: title)
                 showAlert = true

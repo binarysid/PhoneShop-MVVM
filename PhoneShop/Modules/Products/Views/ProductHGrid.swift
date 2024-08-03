@@ -31,7 +31,8 @@ extension ProductHGrid {
             ProductDetailView(product: data)
         }, label: {
             ProductRow(product: data)
-                .background(.blue, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                .frame(width: 200, height: 150)
+                .background(Color.black.opacity(0.6), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                 .padding(10)
         })
         .buttonStyle(PlainButtonStyle())

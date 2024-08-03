@@ -12,29 +12,32 @@ struct ProductRow: View {
     var product: Product
 
     var body: some View {
-        HStack {
+        VStack {
+            Spacer()
             icon
+            Text(product.title)
+                .foregroundStyle(Color(.white))
+                .lineLimit(1)
+                .truncationMode(.tail)
+            Spacer()
+            
         }
-        .overlay {
-            Text("hi")
-                .foregroundStyle(.white)
-                .font(.headline)
-                .frame(alignment: .bottom)
-        }
+        .frame(maxWidth: .infinity)
         .padding()
     }
 }
 
 extension ProductRow {
     private var price: some View {
-        Text("$\(product.price.roundStringUptoDecimal(0))")
+        Text("$\(String(format: "%.0f", product.price ?? 0))")
     }
-
+    
+    // this view is not in use. kept for future reference
     private var titleLabel: some View {
         Label(title: {
             VStack(alignment: .listRowSeparatorLeading) {
                 Text(product.title)
-                Text(product.description)
+                Text(product.description ?? "")
                     .font(.subheadline)
             }
         }, icon: {
@@ -44,9 +47,9 @@ extension ProductRow {
     }
 
     private var icon: some View {
-        AsyncIconView(url: URL(string: product.thumbnail))
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-
+        let imageURL = product.thumbnail.flatMap { URL(string: $0) }
+        return AsyncIconView(url: imageURL)
+            .frame(alignment: .center)
     }
 }
 
